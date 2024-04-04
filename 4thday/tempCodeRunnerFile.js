@@ -11,5 +11,5 @@ function primes(num){
 //             console.log(i, "is a prime number")
 //         }
 //     }
-// }
+}
 // primes(7)
