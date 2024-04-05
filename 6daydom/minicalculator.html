@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.number{
+    width: 30%;
+    height: 40px;
+    margin: 40px;
+    border: 4px solid black;
+}
+.button{
+    width: 20%;
+    height: 70px;
+    margin: 40px;
+    border: 4px solid black;
+}
+
+</style>
+<body>
+  <input class="number" placeholder="ENTER FIRST NUMBER" id="first" type="number">
+  <input class="number" placeholder="ENTER SECOND NUMBER" id="SECOND" type="number">
+
+  <br>
+  <h1 id="result"> </h1>
+  <button onclick="add()" id="button" class="button">Add </button>
+   <button onclick="subtract()" class="button">Subtract  </button>
+  <button onclick="multiply()" class="button">Multiply  </button>
+  <button onclick="divide()" class="button">Divide </button>
+    <script>
+let valuu= document.getElementById("first")
+ 
+ let valuu2= document.getElementById("SECOND") 
+ let result= document.getElementById("result")
+ result.innerHTML="RESULT WILL BE SHOW HERE ";
+    function add(){
+     
+    //   let addd=  (Number(valuu.value)  Number(valuu2.value) );
+    //   result.innerHTML=addd;
+    }
+    function subtract(){
+      
+       let sub=valuu.value -valuu2.value;
+     
+result.innerHTML=sub;
+      
+    }
+    function  multiply (){
+        let mul=valuu.value *valuu2.value;
+     
+     result.innerHTML=mul;
+  
+    }
+    function  divide (){
+        let div=valuu.value/valuu2.value;
+     
+      alert(div)
+    }
+
+    </script>
+</body>
+</html>

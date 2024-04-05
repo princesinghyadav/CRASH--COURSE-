@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#child>img{
+    width: 60%;
+    margin: auto;
+}
+ #root{
+display: flex;
+margin: auto;
+width: 60%;
+}
+
+</style>
+<body>
+    <div id="root"></div>
+  
+
+    <script>
+let arr=[
+    {
+        img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+        name:"vijay shekhar",
+        position:"Founder and ceo",
+        logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },{
+        img:" https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+        name:"Kunal Shah",
+        position:"Founder ",
+        logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png "
+    },{
+        img:" https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",
+        name:" Amrish Rau",
+        position:" ceo",
+        logo:" https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png"
+    },{
+        img:" https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",
+        name:"sampad swain",
+        position:"co-Founder and ceo",
+        logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"
+    }
+]
+let parent=document.getElementById("root")
+
+
+let fun= arr.map((ele)=>{
+
+    let child=document.createElement("div")
+child.id="child";
+
+let img=document.createElement("img")
+img.src=ele.img;
+let h5=document.createElement("h3")
+h5.textContent=ele.name
+let ptag=document.createElement("p")
+ptag.textContent=ele.position;
+let logo=document.createElement("img")
+logo.src=ele.logo
+child.append(img,h5,ptag,logo)
+parent.append(child);
+
+})
+
+</script>
+</body>
+</html>
