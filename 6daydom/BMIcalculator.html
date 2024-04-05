@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang=""eng>
+    <head> 
+        <title> measure bmi</title>
+
+    </head>
+    <body>
+        <h1>CHECK YOUR BMI</h1>
+        <h2>Enter ur weight and height to measure your bmi results</h2>
+        <h2>Put your weight here (KG)</h2>
+        <input id="wei" type="number" placeholder="enter your weight">
+        <h2>put your height here (Metre)</h2>
+        <input id="hei" type="number" placeholder="enter your height">
+        <button onclick="bmi() ">calculate BMI</button>
+        <div style="display: flex;" >
+            <div><h1>Your BMI is </h1></div>
+            <div ><h1 id="bmii">  </h1> </div>
+            <div><h1>  which means you are </h1></div>
+            <div ><h1 id="res">  </h1> </div>
+        </div>
+      
+
+    </body>
+    <script>
+     let we=document.getElementById("wei")
+     let he=document.getElementById("hei")
+let e = document.getElementById("bmii")
+let re =document.getElementById("res")
+
+
+        function bmi  ()  {
+        let bmii = we.value/(he.value**2)
+        e.innerText=bmii  
+        if(bmii<18.4){
+            e.innerText=bmii
+            re.innerText=  " underweight"
+        }if(bmii>18.5 && bmii<24.9){
+            e.innerText=bmii
+            re.innerText= "normol weight"
+        }if (bmii>25 && bmii<29.9 ){
+            e.innerText=bmii 
+            re.innerText= "overwight"
+        }if (bmii>30){
+            e.innerText=bmii 
+            re.innerText= "obese"
+        }
+
+         
+        }
+    </script>
+</html> 
