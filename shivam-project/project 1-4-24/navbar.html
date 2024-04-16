@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navabar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            margin: 0;
+        }
+        header {
+            width: 100%;
+            background-color: rgb(247, 181, 192);
+            display: flex;
+            justify-content: space-around;
+            min-height: 60px;
+            text-align: center;
+            align-items: center;
+            font-size: 17px;
+            flex-wrap: wrap;
+            overflow: hidden;
+        }
+        header > a {
+            color: black;
+            text-decoration: none;
+            font-size: medium;
+        }
+        header > a:hover {
+            text-decoration: underline;
+        }
+        nav {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid;
+            height: 300px;
+        }
+        #sub_nav {
+            display: flex;
+            align-items: center;
+            border: 1px solid;
+            margin: 12px;
+            text-align: center;
+            height: 52px;
+        }
+        #sub_nav > div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid red;
+            height: auto;
+        }
+        .sub-nav-width-no-change > a {
+            letter-spacing: 4px;
+        }
+        .nav_pick_item {
+            padding: 0 9px 0 9px;
+        }
+        #web-logo>a{
+            font-size: 24px !important;
+            font-size: 12px;
+            text-decoration: none;
+            font-weight: 500;
+            color: black;
+        }
+        #sub_nav > div > a {
+            font-size: 12px;
+            text-decoration: none;
+            font-weight: 500;
+            color: black;
+        }
+        #sub_nav > div > p {
+            font-size: 14px;
+            font-weight: 550;
+            border: 1px solid red;
+        }
+        #sub_nav > div:nth-child(2) {
+            width: 100%;
+        }
+        #input {
+            height: 32px;
+            display: flex;
+            justify-content: start;
+            width: 100%;
+            margin: 0 20px;
+            border-radius: 50px;
+            padding: 0 20px;
+            align-items: center;
+            text-align: center;
+            border: 1.2px solid #000;
+            background-color: rgb(243, 243, 241);
+            position: relative;
+        }
+        #input > input {
+            display: none;
+            border: none;
+            height: 30px;
+            width: 92%;
+            margin: 0 20px;
+            border-radius: 50px;
+            background-color: rgb(243, 243, 241);
+            position: absolute;
+        }
+        #input:hover > input {
+            display: block;
+        }
+        .nav_pick_item > img {
+            height: 32px;
+            width: 32px;
+        }
+        .nav_pick_item_smallText {
+            font-size: 12px;
+            text-align: start;
+            font-weight: lighter;
+        }
+        .nav_pick_item:hover p {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        @media all and (min-width: 730px) and (max-width: 1000px) {
+            .nav_pick_item {
+                display: none !important;
+            }
+        }
+        @media all and (min-width: 200px) and (max-width: 729px) {
+            .nav_pick_item {
+                display: none !important;
+            }
+            #nav_part2 {
+                display: inline-block;
+                margin-bottom: 15px;
+            }
+        }
+        @media all and (min-width: 0px) and (max-width: 199px), (min-width: 730px) {
+            #nav_part2 {
+                display: none;
+            }
+        }
+        #sub_nav2 {
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            padding: 10px;
+        }
+        #sub_nav2 h3 {
+            margin: 0 10px 0 10px;
+        }
+        #sub_nav2 p {
+            margin: 0 10px 0 10px;
+        }
+        #sub_nav2 button {
+            height: 37px;
+            font-size: medium;
+            background-color: #000;
+            color: white;
+            padding: 0 30px 0 30px;
+            border: none;
+            border-radius: 50px;
+        }
+        #nav2 {
+            width: 100%;
+            height: 36px;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: space-evenly;
+            line-height: 1.25;
+            align-items: center;
+            position: relative;
+            white-space: nowrap;
+        }
+        .drop_a {
+            color: white;
+            font-size: 14px;
+            padding: 8px;
+            font-weight: 400;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .drop_content {
+            visibility: hidden;
+            background-color: rgb(253, 245, 235);
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            left: 0;
+            margin-top: 9px;
+        }
+        .droprow {
+            display: flex;
+        }
+        .nav_text_link {
+            display: flex;
+        }
+        .dropColumn {
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+        }
+        .dropColumn > a {
+            margin: 10px 0 10px;
+            text-decoration: none;
+            font-size: 15px;
+            color: rgb(0, 0, 0);
+        }
+        .dropColumn > p {
+            margin-top: 10px;
+        }
+        .nav_hover_img {
+            display: flex;
+            justify-content: flex-end;
+            gap: 40px;
+            margin: 40px 40px 40px 0;
+            width: 70%;
+        }
+        .nav_hover_img > div {
+            width: 35%;
+        }
+        .nav_hover_img > div > img {
+            width: 100%;
+        }
+        .dropdown:hover .drop_content {
+            visibility: visible;
+        }
+        .dropColumn > a:hover {
+            text-decoration: underline;
+        }
+        @media all and (min-width: 300px) and (max-width: 769px) {
+            #nav2 {
+                background-color: rgb(255, 255, 255);
+                padding: 4px;
+                height: 42px;
+            }
+            .dropdown:nth-child(7),
+            .dropdown:nth-child(8),
+            .dropdown:nth-child(9),
+            .dropdown:nth-child(10),
+            .dropdown:nth-child(11) {
+                display: none;
+            }
+            .drop_content {
+                margin-top: 9px;
+            }
+            .drop_a {
+                padding: 10px;
+                letter-spacing: -1px;
+                background-color: rgb(255, 255, 255);
+                color: rgb(0, 0, 0);
+                border-radius: 5px;
+                font-weight: 400;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+            }
+            .droprow {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .nav_text_link {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 10px;
+            }
+            .dropColumn {
+                display: flex;
+                flex-direction: column;
+                padding: 5px;
+            }
+            .dropColumn > a {
+                margin: 5px 0 5px;
+                text-decoration: none;
+                font-size: 12px;
+                color: rgb(0, 0, 0);
+            }
+            .nav_hover_img {
+                display: flex;
+                justify-content: space-evenly;
+                gap: 40px;
+                margin: 10px;
+                width: 70%;
+            }
+            .nav_hover_img > div {
+                width: 50%;
+            }
+            .nav_hover_img > div > img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <a href="">
+        <p>
+            <span><b>SALE!</b>Get select Sephora Collection for $10 & under. While supplies last. <b>SHOP NOW</b>▸</span>
+        </p>
+    </a>
+</header>
+<nav>
+    <div id="sub_nav">
+        <div id="web-logo" class="sub-nav-width-no-change">
+            <a href="index.html">SEPHORA</a>
+        </div>
+        <div id="search">
+            <div id="input">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p style="margin-left: 10px;">search</p>
+                <input type="text" placeholder="Search" />
+            </div>
+        </div>
+        <div class="nav_pick_item" class="sub-nav-width-no-change">
+            <img src="https://cdn-icons-png.flaticon.com/128/4155/4155305.png" alt="" />
+            <a href=""><p style="white-space: nowrap">Stores & Services <br /><span class="nav_pick_item_smallText">Choose Your Store</span></p></a>
+        </div>
+        <div class="nav_pick_item" class="sub-nav-width-no-change">
+            <img src="https://cdn-icons-png.flaticon.com/128/3364/3364929.png" alt="" />
+            <a href="https://community.sephora.com/"><p>Community</p></a>
+        </div>
+
+        <div class="nav_pick_item" class="sub-nav-width-no-change">
+           <img src="https://www.sephora.com/img/ufe/icons/me-active.svg" alt="" />
+           <a href="./signIn.html"><p style="white-space: nowrap"><b>Sign In</b><br /><span class="nav_pick_item_smallText">for FREE Shipping🚚</span></p></a>
+        </div>
+ 
+        <div style="padding: 5px; width: 50px">
+            <img style="width: 30px" src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" alt="" />
+        </div>
+        <div style="padding: 5px; width: 50px">
+            <img style="width: 30px" src="https://cdn-icons-png.flaticon.com/128/2636/2636890.png" alt="" />
+        </div>
+    </div>
+    <div id="nav_part2">
+        <div id="sub_nav2">
+            <div>
+                <h3>Sign In for free shipping🚚</h3>
+                <p>
+                    Don't have an account?<span><a href="./signUp.html" style="text-decoration: none; color: rgb(5, 158, 209)">create an account</a></span>
+                </p>
+            </div>
+            <div>
+                <button><b>sign in</b></button>
+            </div>
+        </div>
+    </div>
+    <div id="nav2">
+        <div class="dropdown">
+            <a class="drop_a" href="">New</a>
+            <div class="drop_content">
+                <div class="droprow">
+                    <div class="nav_text_link">
+                        <div class="dropColumn">
+                            <a href=""><b>All New</b></a>
+                            <a href=""><b>Just Dropped</b></a>
+                            <a href=""><b>New Makeup</b></a>
+                            <a href=""><b>New SkinCare</b></a>
+                            <a href=""><b>New Fragrance</b></a>
+                            <a href=""><b>New Bath & Body</b></a>
+                            <a href=""><b>New Tool & Brushes</b></a>
+                        </div>
+                        <div class="dropColumn">
+                            <a href=""><b>The Next Big Thing</b></a>
+                            <a href=""><b>Bestsellers</b></a>
+                            <a href=""><b>Trending on Social</b></a>
+                            <a href=""><b>Refillable Beauty Products</b></a>
+                            <a href=""><b>Quizzes & Buying Guides</b></a>
+                            <a href=""><b>Clean Beauty Guide</b></a>
+                            <a href=""><b>Clean+Planet Positive <br />BeautyGuide</b></a>
+                            <a href=""><b>FSA & HSA Eligible</b></a>
+                        </div>
+                    </div>
+                    <div class="nav_hover_img">
+                        <div>
+                            <img src="https://www.sephora.com/contentimages/meganav/large/2024-april-skin-story-site-desktop-universal-navigation-button-release.jpg?imwidth=588" alt="" />
+                        </div>
+                        <div>
+                            <img src="https://www.sephora.com/contentimages/2024-4-1-rare-beauty-fos-soft-pinch-powder-blush-site-desktop-global-navigation-button-en-us.jpg?imwidth=588" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a class="drop_a" href="">Brand</a>
+            <div class="drop_content">
+                <div class="droprow">
+                    <div class="nav_text_link">
+                        <div class="dropColumn">
+                            <p><b>Brand A-Z</b></p>
+                            <p style="padding-bottom: 20px"><b>SEPHORA COLLECTION</b></p>
+                            <a href=""><b>New Brands</b></a>
+                            <a href="">Brown Girl Jane</a>
+                            <a href="">AAVRANI</a>
+                            <a href="">Dr. Idriss</a>
+                            <a href="">Prada Beauty</a>
+                            <a href="">Iris&Romeo</a>
+                        </div>
+                        <div class="dropColumn">
+                            <p><b>Oonly At Sephora</b></p>
+                            <a href="">Rare Beauty By Selena Gomez</a>
+                            <a href="">HAUS LABS By Lady Gaga</a>
+                            <a href="">Mane</a>
+                            <a href="">5 SENS</a>
+                        </div>
+                        <div class="dropColumn">
+                            <p><b>Affordable Brands</b></p>
+                            <a href="">SEPHORA COLLECTION</a>
+                            <a href="">The Ordinary</a>
+                            <a href="">The Inkey List</a>
+                            <a href="">Verb</a>
+                        </div>
+                        <div class="dropColumn">
+                            <p><b>Black-Owned Brands</b></p>
+                            <a href="">PATTERN By Trance Ellis Ross</a>
+                            <a href="">BREAD BEAUTY SUPPLLY</a>
+                            <a href="">adwoa beauty</a>
+                            <a href="">FORVR Mood</a>
+                            <a href="">Melanin Haircare</a>
+                            <a href="">Fashion Fair</a>
+                            <a href="">Fenty Fragrance</a>
+                        </div>
+                        <div class="dropColumn">
+                            <p><b>Clean at Sephora</b></p>
+                            <a href="">ILIA</a>
+                            <a href="">Ellis Brooklyn</a>
+                            <a href="">dae</a>
+                            <a href="">Living Proof</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown"><a class="drop_a" href="">Makeup</a></div>
+        <div class="dropdown"><a class="drop_a" href="">Skincare</a></div>
+        <div class="dropdown"><a class="drop_a" href="">Hair</a></div>
+        <div class="dropdown"><a class="drop_a" href="">Fragrance</a></div>
+        <div class="dropdown"><a class="drop_a" href="">Tools & Brushes</a></div>
+        <div class="dropdown"><a class="drop_a" href="">Bath & Body</a></div>
+        <div class="dropdown"><a class="drop_a" href="">Mini Size</a></div>
+        <div class="dropdown">
+            <a class="drop_a" href="">Gifts & Gift Cards</a>
+        </div>
+        <div class="dropdown"><a class="drop_a" href="">Beauty Under $20</a></div>
+        <div class="dropdown"><a class="drop_a" href="">Sale & Offers</a></div>
+    </div>
+</nav>
+</body>
+</html>

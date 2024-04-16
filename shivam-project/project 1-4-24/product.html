@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            font-family: sans-serif;
+        }
+       
+        #item-imgs{
+        display: flex;
+        gap: 4px;
+        
+       }
+       #item-imgs>div{
+        width: 56px;
+         height: 56px;
+        border-radius: 50%;
+        border: 1px solid;
+       }
+       #item-imgs>div img{
+        width: 100%;
+         border-radius: 50%;
+       }
+       #item-imgs>div:hover{
+        border: 3px solid black;
+       }
+       
+       
+       #item-fv img{
+       width: 100%;
+       min-height: 80%;
+        
+        }
+
+       @media screen and (min-width:801px){
+        #produt-page{
+            display: flex;
+            /* flex-wrap: wrap; */
+            /* white-space: nowrap; */
+            
+            gap: 30px;
+            margin: 20px;
+        }
+        #item-imgs{
+        flex-direction: column;
+       }
+       #item-fv{
+        width: 456px;
+        height: 456px;
+        /* border: 1px solid; */
+        display: flex;
+        align-items: center;
+       }
+       #item-rest{
+        margin: 15px;
+      }
+      #item-rest>div:nth-child(1){
+        display: flex;
+        gap: 20px;
+        /* border: 1px solid; */
+        justify-content: space-evenly;
+      }
+      #high-light>div:last-child{
+       display: grid;
+       width: 70%;
+        gap: 30px;
+       grid-template-columns: repeat(3,1fr);
+       /* border: 1px solid; */
+      }
+      #high-light>div:last-child>div{
+       
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        /* border: 1px solid; */
+      }
+      #high-light>div:last-child>div:hover p{
+       text-decoration: underline;
+      }
+      #high-light>div:last-child>div>div{
+        width: 45px;
+        border-radius: 50px;
+      }
+      #high-light>div:last-child>div img{
+        width: 100%;
+      }
+
+      #rating{
+        margin: 20px;
+        display: flex;
+      }
+      #rating>div{
+        display: flex;
+        gap: 10px;
+      }
+      
+      .container{
+        /* border: 1px solid; */
+        width: 40%;
+      }
+
+      #item-details>div:nth-child(6){
+        display: flex;
+        gap: 20px;
+       }
+       #item-details>div:nth-child(6)>div{
+        border: 1px solid gray;
+         display: flex;
+        flex-direction: column;
+        width: 30%;
+        /* 5 */
+        border-radius: 5px;
+        padding: 15px;
+       }
+       }
+       @media screen and (max-width:800px){
+        #produt-page{
+            flex-direction: row;
+            justify-content: center;
+            margin: 20px;
+        }
+        #item-imgs{
+        display: flex;
+        justify-content: center;
+        gap: 4px; 
+       }
+       #item-fv{
+        width: 456px;
+        height: 456px;
+        /* border: 1px solid; */
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        /* margin-left:40px ; */
+        /* align-items: center; */
+       }
+       
+       #item-rest{
+        margin: 10px;
+      }
+      #item-rest>div:nth-child(1){
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        /* justify-content: space-evenly; */
+      }
+      #high-light>div:last-child{
+       display: grid;
+       width: 100%;
+        gap: 10px;
+       grid-template-columns: repeat(2,1fr);
+       /* border: 1px solid; */
+       margin: auto;
+      }
+      #high-light>div:last-child>div{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        /* border: 1px solid; */
+      }
+      #high-light>div:last-child>div:hover p{
+       text-decoration: underline;
+      }
+      #high-light>div:last-child>div>div{
+        width: 45px;
+        border-radius: 50px;
+      }
+      #high-light>div:last-child>div img{
+        width: 100%;
+      }
+
+      #rating{
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      #rating>div{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      #rating>div:first-child{
+        display: flex;
+        justify-content: end;
+      }
+      .container{
+        /* border: 1px solid; */
+        width: 50%;
+      }
+      #item-details>div:nth-child(6){
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+       }
+       #item-details>div:nth-child(6)>div{
+        border: 1px solid gray;
+         display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* 5 */
+        border-radius: 5px;
+        padding: 15px;
+       }
+    }
+
+
+
+       #item-details{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+       }
+       #item-details>div:nth-child(2){
+        display: flex;
+        gap: 8px;
+        font-size: small;
+       }
+       #item-details>div:nth-child(3){
+        font-size: small;
+       }
+       .new{
+        border: 1px solid;
+        display: inline-block;
+        padding: 0 2.5px;
+        border-radius: 5px;
+        color: white;
+        background-color: black;
+        font-size: 12px;
+        text-align: center;
+       }
+       #item-details>div:nth-child(4){
+        display: flex;
+        gap: 10px;
+       }
+       #item-details>div:nth-child(5)>div{
+        padding: 10px;
+        margin: 10px;
+        border: 2px solid;
+        border-radius: 5px;
+        display: inline-block;
+        position: relative;
+       }
+       #item-details>div:nth-child(5)>div>div{
+        
+        border: 1px solid;
+        display: inline-block;
+        position: absolute;
+       }
+       
+       #item-details>div:nth-child(6)>div:hover{
+        border: 1.5px solid ;
+       }
+       
+       #item-details>div:nth-child(7){
+        background-color: #F6F6F8;
+        padding: 10px;
+       }
+      .link-b{
+        color: rgb(18, 132, 224);
+      }
+      .link-b:hover{
+        text-decoration: underline;
+      }
+      #item-details>div:nth-child(8){
+       display: flex;
+        gap: 20px;
+      }
+      #item-details>div:nth-child(8) button{
+       padding: 15px 45px;
+       border-radius: 50px;
+       background-color:red;
+       border: none;
+       color: white;
+       font-weight: 700;
+      }
+      #item-details>div:nth-child(8) button:hover{
+        background-color: rgb(249, 127, 127);
+      }
+
+      /*  rest details */
+     
+      
+     
+      #rating>div:first-child{
+        display: flex;
+        flex-direction: column;
+      }
+      #rating>div:nth-child(3){
+        display: flex;
+        gap: 10px;
+      }
+    
+      #rev-rec{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+
+      .child{
+         
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+      .son{
+         
+        height:8px; 
+        width: 100%;
+        border-radius: 5px;
+        background-color: rgb(236, 234, 231);
+      }
+      .gs{
+        background-color: black;
+        border-radius: 5px;
+        height:8px; 
+      }
+       
+     
+    </style>
+    
+</head>
+<body>
+    <section id="produt-page">
+
+       <div id="item-imgs">
+        <div><img src="https://www.sephora.com/productimages/sku/s2742195-main-zoom.jpg?imwidth=630" alt=""></div>
+        <div><img src="https://www.sephora.com/productimages/sku/s2742195-av-2-zoom.jpg?imwidth=630" alt=""></div>
+        <div><img src="https://www.sephora.com/productimages/sku/s2742195-av-3-zoom.jpg?imwidth=96" alt=""></div>
+        <div><img src="https://www.sephora.com/productimages/sku/s2742195-av-1-zoom.jpg?imwidth=630" alt=""></div>
+        <div><img src="https://www.sephora.com/productimages/sku/s2742195-av-7-zoom.jpg?imwidth=630" alt=""></div>
+        <div><img src="https://www.sephora.com/productimages/sku/s2742195-av-5-zoom.jpg?imwidth=630" alt=""></div>
+        <div><img src="https://www.sephora.com/productimages/sku/s2742195-av-4-zoom.jpg?imwidth=630" alt=""></div>
+        <div><img src="https://www.sephora.com/productimages/sku/s2742195-av-6-zoom.jpg?imwidth=630" alt=""></div>
+       </div>
+        
+       <div id="item-fv">
+        <img src="https://www.sephora.com/productimages/sku/s2742195-main-zoom.jpg?imwidth=630" alt="">
+         
+       </div>
+
+       <div id="item-details">
+         <div>
+          <h4>Glow Recipe</h4>
+          <p>Watermelon Glow Niacinamide Hue Drops Sun Glow Serum</p>
+         </div>
+
+         <div>
+            <p ><b>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i>
+                705
+               </b>
+           </p>
+            <p>Ask a question</p>
+            <p><i class="fa-solid fa-heart"></i>158.8k</p>
+         </div>
+
+         <div>
+            <p><b style="font-size: medium;">$35.00</b> get if for <span style="color: red;font-weight:600;">$33.25 (5% off)</span> with Auto-Replenish<br>or 4 payments of $8.75% with <b>Klarna.</b> or <b>afterpay</b></p>
+         </div>
+
+         <div>
+            <p>Size: 1.35 oz / 40 mL</p>
+            <div class="new"><b>new</b></div>
+         </div>
+
+         <div>
+            <p style="font-size: small;">Standard size</p>
+            <div>
+              <p>1.35 oz / 40 mL</p>
+              <div class="new"><b>new</b></div>
+            </div>
+         </div>
+
+         <div>
+            <div>
+                <i class="fa-solid fa-truck-fast"></i>
+                <h4>Free Shipping</h4>
+            </div>
+            <div>
+                <i class="fa-solid fa-box-open"></i>
+                <h5>Auto-Replenish</h5>
+                <p style="font-size: small;">Save 5% on this item</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-lock"></i>
+                <h5>Same-Day</h5>
+                <h4>delivery</h4>
+            </div>
+            <div>
+                <i class="fa-solid fa-store"></i>
+                <h5>Buy Online &</h5>
+                <h4>Pick Up</h4>
+            </div>
+         </div>
+         <div>
+             <p><span ><a class="link-b" href="">Sign in</a></span>or <span ><a class="link-b" href="">create an account</a></span> to enjoy <b>FREE standard shipping</b>
+                <br><span class="link-b">Shipping & Returns</span></p></a>
+
+         </div>
+         <div>
+            <button>Add to Basket</button>
+            
+            <img
+            style="width: 30px ;height: 30px;"
+            src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png"
+            alt=""
+          />
+         </div>
+       </div>
+    </section>
+
+    <section id="item-rest">
+       <div id="high-light">
+        <div><h1>Highlights</h1></div>
+        <div >
+            <div>
+               <div> <img src="https://www.sephora.com/contentimages/highlights/key-ingredient.svg" alt=""></div>
+                <p>Niacinamide ></p>
+            </div>
+            
+            <div>
+                <div><img src="https://www.sephora.com/contentimages/highlights/high-shine-finish.svg" alt=""></div>
+                <p>High Shine Finish</p>
+            </div>
+
+            <div>
+                <div> <img src="https://www.sephora.com/contentimages/highlights/vegan-2024.svg" alt=""></div>
+                <p>Vegan ></p>
+            </div>
+        
+            <div>
+                <div> <img src="https://www.sephora.com/contentimages/highlights/key-ingredient.svg" alt=""></div>
+                <p>Hyaluronic Acid ></p>
+            </div>
+            
+            <div>
+                <div>                <img src="https://www.sephora.com/contentimages/highlights/good-for-dullness-uneven-texture.svg" alt=""></div>
+                <p>Good for: Uneven Texture</p>
+            </div>
+
+            <div>
+                <div>  <img src="https://www.sephora.com/contentimages/highlights/clean-and-planet-aware-2024.svg" alt=""></div>            
+                <p>Clean + Planet Aware</p>              
+           </div>
+        </div>
+       </div>
+    </section>
+
+    <section id="rating">
+        <div>
+            <h1>Rating & Reviews (718)</h1>
+            <p style="color: rgb(0, 110, 255); font-size: small;">write a review</p>
+        </div>
+        <div>
+            <div class="container">
+              <div class="child">   <p>5</p><div class="son"><div class="gs" style="width: 80%;" ></div></div>  </div>
+              <div class="child">   <p>4</p><div class="son"><div class="gs" style="width: 30%;"></div></div>  </div>
+              <div class="child">   <p>3</p><div class="son"><div class="gs" style="width: 20%;"></div></div>  </div>
+              <div class="child">   <p>2</p><div class="son"><div class="gs" style="width: 10%;"></div></div>  </div>
+              <div class="child">   <p>1</p><div class="son"><div class="gs" style="width: 5%;"></div></div>  </div>
+            </div>
+
+            <div id="rev-rec">
+             <div> 
+              <h1>4.5<i class="fa-solid fa-star"></i></h1>
+              <p>718 Reviews</p>
+             </div>
+
+             <div>
+                <h1>89%</h1>
+                <p>Recommended</p>
+             </div>
+            </div>
+
+            <div>
+                <p>Product reviews are managed by a third party to verify authenticity and compliance with our <span style="color: rgb(0, 145, 255);">Ratings & Reviews Guidelines</span></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
