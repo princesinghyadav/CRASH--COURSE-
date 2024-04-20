@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+#root{
+    width: 60%;
+    margin: auto;
+
+}
+#root>img{
+    width: 100%;
+    height: 500px;
+}
+#button{
+    width: 30%;
+    
+    
+    margin: auto;
+}#button>button{
+    /* justify-content: space-around; */
+    margin-left: 180px;
+    height: 20px;
+    width: 30px;
+}
+</style>
+<body>
+    
+<h1 style="text-align: center;"> This is a presentation of auto slide show and by button click </h1>
+
+<div id="root"> 
+
+
+</div>
+<br>
+<br>
+<div id="button"> 
+    <button onclick="previous()"><</button>
+    <button onclick="next()">></button>
+</div>
+
+<button onclick="stop()" id="btn">
+ STOP 
+</button>
+</body>
+<script>
+
+let arr =[
+    "https://th.bing.com/th?id=OIP.4siKIW3oZ4kEo0vkEVQ5hgHaLH&w=204&h=306&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    "https://th.bing.com/th?id=OIP.1YM53mG10H_U25iPjop83QHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    "https://th.bing.com/th?id=OIP.3MxqaJv2Z5QsG7wIXzizjAHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    "https://th.bing.com/th?id=OIP.Jek3CDQGyU5V2g3mChz8wQHaE-&w=305&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    "https://th.bing.com/th?id=OIP.hqgXmy-r13g-63xcvlz6AwHaE7&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+    "https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_640.jpg",
+    "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_640.jpg",
+    "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_640.jpg",
+    "https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_640.jpg",
+    "https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_640.jpg",
+    "https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_640.jpg",
+    "https://cdn.pixabay.com/photo/2017/02/01/22/02/mountain-landscape-2031539_640.jpg",
+    "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_640.jpg",
+    "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_640.jpg",
+    "https://cdn.pixabay.com/photo/2016/08/11/23/48/mountains-1587287_640.jpg",
+    "https://th.bing.com/th?id=OIP.c1uD1MYRWe-qDmB7iZNjBgHaE9&w=305&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    "https://th.bing.com/th/id/OIP.GbUsVC251u7HMH01xfJvOwHaEK?w=291&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+]
+
+let display= document.getElementById("root");
+
+var count=0;
+
+
+function previous(){
+    count--;
+    if(count<0){
+        count=arr.length-1;
+    }
+    img.src=arr[count];
+    clearInterval(clear)
+    clearInterval(clear2)
+}
+function next(){
+    count++;
+    if(count==arr.length){
+         count=0;
+    }
+    img.src=arr[count];
+    clearInterval(clear)
+    clearInterval(clear2)
+}
+
+function increasecount(){
+    count++;
+    if(count==arr.length){
+         count=0;
+    }
+    img.src=arr[count];
+    // clearInterval(clear)
+}
+ let clear = setInterval(increasecount,5000);
+
+
+ let slide=0;
+function stop(){
+    let btn=document.getElementById("btn");
+if(slide==0 ){
+    clearInterval(clear)
+  
+    btn.innerHTML="START "
+    slide=1;
+  
+} 
+
+ else {
+ 
+
+   let clear2= setInterval(increasecount,5000);
+    slide=0;
+    btn.innerHTML="STOP "
+}
+   
+}
+
+let img=document.createElement("img")
+img.id="imgtag";
+img.src=arr[count];
+img.alt=" slide show example ";
+
+
+display.append(img)
+
+
+
+</script>
+</html>
