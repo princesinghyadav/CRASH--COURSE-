@@ -5,89 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Country population </title>
 </head>
-<style>
-    #box{
-        border: 2px solid black;
-        height: 350px;
-        padding: 13px;
-
-    }
-#root{
-    display:grid;
-    width: 60%;
-    margin: auto;
-    grid-template-columns: repeat(3,1fr);
-    gap: 15px;
-}
-</style>
+ <link rel="stylesheet" href="index.css">
 <body>
-    <button onclick="fetchh()"  id="btn">Fetch Users</button>
-<div id="inp"> </div>
+    <button onclick="fetchh(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-countries`)"  id="btn">Fetch Users</button>
+
+<button id="sort">fetch by Rank sorting</button>
+
     <div id="root">
  
 
     </div>
 
-    <script>
-    
-let root= document.getElementById("root")
-
-function fetchh(){
-    let inp=document.getElementById("inp");
-    let input= document.createElement("input")
-    input.placeholder="enter the country name "
-
-    inp.append(input)
-let btn= document.getElementById("btn")
-btn.innerHTML=null;
-
-btn.style.border="none"
- fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-countries`)
-    .then((resp)=>{
-// let resp=res.json();
-        return resp.json()
-    })
-    .then((resp)=>{
-        console.log(resp)
-        Population(resp)
-    }).catch((err)=>{
-        console.log(err)
-    })
-
-
-
-}
-
- function  Population(resp){
-    // console.log(data)
-    // console.log(data[9].Rank)
-    const productsArray = resp.data; 
-    root.innerHTML="";
-
-    let countrypopulation=  productsArray.forEach(ele=>{
-        let box= document.createElement("div")
-        box.id="box"
-let h1=document.createElement("h1")
-h1.textContent=`Country:- ${ele.country}`
-
-let h2=document.createElement("h2")
-h2.textContent=`population:-${ele.population/100000}M`
-
-let h3=document.createElement("h3")
-h3.textContent=`Rank:-${ele.Rank}`
-
-box.append(h1,h2,h3)
-    root.append(box)
-    })
-
-   
-
-}  
-
-
- 
-
-
+    <script src="index.js">
     </script>
 </body>
 </html>
