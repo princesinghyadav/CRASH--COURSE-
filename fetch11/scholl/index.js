@@ -108,3 +108,25 @@ function highestStudentCountDepartment(school){
 }
 
 console.log(highestStudentCountDepartment(school));
+
+
+// problem 14 :- done 
+
+    
+
+function generateGreeting(name, lang="english"){
+
+  if(lang=="english"){
+    // console.log(` Hello ${name} `)
+    return ` Hello ${name} `
+  }
+  if(lang=="Spanish" ){
+  return `¡Hola ${name} `
+  }
+  if(lang=="French"){
+   return ` Bonjour ${name} `
+  }
+}
+console.log(generateGreeting("Alice"));  
+console.log(generateGreeting("Bob", "Spanish"));  
+console.log(generateGreeting("Charlie", "French"));  

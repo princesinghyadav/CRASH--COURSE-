@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ 
+<body>
+    <div>
+
+        <input id="inp">
+        <select>
+            <option>priority</option>
+            <option value="high">high</option>
+            <option value="low">low</option>
+            <option value="ediuym">medium</option>
+
+        </select>
+        <button>
+            add todo
+        </button>
+    </div>
+    <div>
+         <h1 style="text-align: center; color: aqua;"> MASAI EMPLOYEE RECORDS </h1>
+      
+                <table id="table">
+                    <thead>
+                    <th> S.no </th> 
+                    <th> To Do Name </th>
+                    <th>priority</th>
+                    <th>Delete </th>
+                    </thead>
+                    <tbody id="exa">
+ <!-- <tr>
+    <td>1</td>
+    <td>prince</td>
+ </tr> -->
+       
+                    </tbody>
+                            </table>     
+           
+               
+    </div>
+</body>
+
+
+
+
+
+
+<script>
+let input=document.getElementById("inp");
+let priority=document.querySelector("select");
+let btn=document.querySelector("button")
+let exa= document.getElementById("exa")
+
+let data=[];
+
+function savedata(data){
+    localStorage.setItem("data",JSON.stringify(data))
+}
+function loadata(){
+    let loading=JSON.parse(localStorage.getItem("data"))
+// console.log(loading)
+ if(loading){
+    data=loading;
+    Dom(data)
+ }
+ }
+
+ function Dom(data){
+exa.innerHTML=""
+let apendd=data.forEach((ele,i)=>{
+    let tr= document.createElement("tr")
+    let th1= document.createElement("th")
+    th1.innerText=i+1;
+    let th2= document.createElement("th")
+    th2.innerText=ele.title;
+    let th3= document.createElement("th")
+    th3.innerHTML=ele.priority;
+    let butn=document.createElement("button")
+    butn.innerHTML="DELETE"
+    butn.addEventListener("click", (i)=>{
+        delet(i);
+    })
+    let t4= document.createElement("th")
+    t4.append(butn)
+  
+    tr.append(th1,th2,th3,t4)
+exa.append(tr)
+
+})
+  
+}
+function delet(i){
+
+data.splice(i,1)
+
+savedata(data)
+Dom(data)
+}
+
+
+btn.addEventListener("click", ()=>{
+
+let obj={
+    title:input.value,
+    priority:priority.value,
+
+};
+data.push(obj);
+
+savedata(data);
+ 
+Dom(data)
+
+
+})
+loadata()
+</script>
+</html>
