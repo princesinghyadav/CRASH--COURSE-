@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> SIGN UP PAGE ....</h1>
+<br>
+<input type="text" id="name" placeholder="Enter your name ">
+<input type="email" id="mail" placeholder="Enter your email">
+<input type="text" id="passw" placeholder="Enter you password">
+
+<button onclick="sighup()"> Sign up </button>
+
+
+
+</body>
+<script>
+    namee=document.getElementById("name")
+      mail = document.getElementById("mail")
+    pass = document.getElementById("passw")
+
+  function sighup(){
+password=pass.value;
+email=mail.value;
+  name=namee.value;   
+ 
+ let user ={name,email,password};
+ fetch(`http://localhost:3000/users`,{
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json"
+    },
+    body:JSON.stringify(user)
+ })
+ .then(()=>{
+    window.location.href = "./login.html";
+    // alert("SignUp Successful , Please Login... ")
+
+ 
+ }) 
+ .catch((err)=>{
+    console.log(err)
+ })
+
+}
+
+// async function  signing(URL){
+//     try {
+//         let res= await fetch(URL)
+//         let resp= await res.json()
+//         // console.log(resp) 
+       
+        
+//     }
+//      catch (error) {
+//        console.log(error) 
+//     }
+// }
+// signing(`http://localhost:3000/users`)
+</script>
+</html>

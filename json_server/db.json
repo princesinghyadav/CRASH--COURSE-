@@ -1,0 +1,177 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Vijay",
+      "email": "v@gmail.com",
+      "password": "Vijay123"
+    },
+    {
+      "id": 2,
+      "name": "Rekha",
+      "email": "rekha@gmail.com",
+      "password": "1234Rekha"
+    },
+    {
+      "name": "PRINCE KUMAR YADAV",
+      "email": "princesinghyadav017@gmail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "name": "PRINCE KUMAR YADAV",
+      "email": "princesinghyadav017@gmail.com",
+      "password": "12345678",
+      "id": 4
+    },
+    {
+      "name": "hrithuik",
+      "email": "Shashiyadav2022@outlook.com",
+      "password": "1233",
+      "id": 5
+    },
+    {
+      "name": "hrithuik",
+      "email": "Shashiyadav2022@outlook.com",
+      "password": "1233",
+      "id": 6
+    },
+    {
+      "name": "hrithuik",
+      "email": "Shashiyadav2022@outlook.com",
+      "password": "1233",
+      "id": 7
+    },
+    {
+      "name": "hrithuik",
+      "email": "Shashiyadav2022@outlook.com",
+      "password": "1233",
+      "id": 8
+    },
+    {
+      "name": "PRINCE KUMAR YADAV",
+      "email": "princesinghyadav017@gmail.com",
+      "password": "eef",
+      "id": 9
+    },
+    {
+      "name": "nghg",
+      "email": "princesinghyadav017@gmail.com",
+      "password": "shivcam",
+      "id": 10
+    },
+    {
+      "name": "e",
+      "email": "yadavshanti720@gmail.com",
+      "password": "nvgj",
+      "id": 11
+    },
+    {
+      "name": "PRINCE KUMAR YADAV",
+      "email": "princesinghyadav017@gmail.com",
+      "password": "bhghtf",
+      "id": 12
+    },
+    {
+      "name": "PRINCE KUMAR YADAV",
+      "email": "princesinghyadav017@gmail.com",
+      "password": "bhghtf",
+      "id": 13
+    },
+    {
+      "name": "jyj",
+      "email": "jty",
+      "password": "jy",
+      "id": 14
+    },
+    {
+      "name": "PRINCE KUMAR YADAV",
+      "email": "princesinghyadav017@gmail.com",
+      "password": "hfthrftfnj",
+      "id": 15
+    },
+    {
+      "name": "shivam",
+      "email": "hgfrtj",
+      "password": "hfh",
+      "id": 16
+    },
+    {
+      "name": "ghth",
+      "email": "fhfrh",
+      "password": "njfgj",
+      "id": 17
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "SmartPhone",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBkz2kjdQjM6DX7mLSYMtBrQMF_wRCFb-3cxwI5rPg1A&s",
+      "price": 15000,
+      "ratings": 5
+    },
+    {
+      "id": 2,
+      "title": "TV",
+      "src": "https://5.imimg.com/data5/SELLER/Default/2023/4/299765792/GM/GW/BT/6158633/50-inch-smart-android-led-tv-500x500.jpg",
+      "price": 25000,
+      "ratings": 4
+    },
+    {
+      "id": 3,
+      "title": "Laptop",
+      "src": "https://images-cdn.ubuy.co.in/633b75b241637808af7d4688-asus-laptop-l510-ultra-thin-laptop.jpg",
+      "price": 35000,
+      "ratings": 4.5
+    },
+    {
+      "id": 4,
+      "title": "Washing Machine",
+      "src": "https://whirlpoolindia.vtexassets.com/arquivos/ids/167574-1200-auto?v=638320917724870000",
+      "price": 20000,
+      "ratings": 3.2
+    },
+    {
+      "id": 5,
+      "title": "Microwave oven",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyiYVs3xse5zH7hhmnIDtU6ZchYBpCOuid00Gev16kbQ&s",
+      "price": 23000,
+      "ratings": 3.8
+    }
+  ],
+  "allUsersCart": {
+    "Vijay": [
+      {
+        "id": 1,
+        "title": "SmartPhone",
+        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBkz2kjdQjM6DX7mLSYMtBrQMF_wRCFb-3cxwI5rPg1A&s",
+        "price": 15000,
+        "ratings": 5
+      },
+      {
+        "id": 2,
+        "title": "TV",
+        "src": "https://5.imimg.com/data5/SELLER/Default/2023/4/299765792/GM/GW/BT/6158633/50-inch-smart-android-led-tv-500x500.jpg",
+        "price": 25000,
+        "ratings": 4
+      }
+    ],
+    "Rekha": [
+      {
+        "id": 4,
+        "title": "Washing Machine",
+        "src": "https://whirlpoolindia.vtexassets.com/arquivos/ids/167574-1200-auto?v=638320917724870000",
+        "price": 20000,
+        "ratings": 3.2
+      },
+      {
+        "id": 5,
+        "title": "Microave oven",
+        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyiYVs3xse5zH7hhmnIDtU6ZchYBpCOuid00Gev16kbQ&s",
+        "price": 23000,
+        "ratings": 3.8
+      }
+    ]
+  }
+}
