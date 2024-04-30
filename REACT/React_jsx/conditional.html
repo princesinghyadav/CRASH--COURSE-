@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Your JSX code here
+
+      let root =document.getElementById("root")
+let val=false;
+    let condi=  "Seize the day " ;
+let condi2="Seize the dsay 2  "
+    let p= <p> {condi}</p>
+    let p2=<p>{condi2}</p>
+
+    let rootelement= ReactDOM.createRoot(root)
+    rootelement.render(val  ? p  :  p2)
+    
+
+    </script>
+  </body>
+</html>
