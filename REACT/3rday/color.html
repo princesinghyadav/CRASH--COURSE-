@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+
+
+    function App (){
+const [color,change]= React.useState("black")
+function  colorcom(event){
+  change(event.target.value)
+}
+
+      return (
+<>
+      <input placeholder="enter the color in hex values" 
+      value={color} 
+      onChange={colorcom}
+      />
+ <div style={{
+          width:"50%",
+          backgroundColor:`${color}`,
+          margin:"auto",
+          height:"300px",
+          marginTop:"100px",
+
+        }}>
+          
+          </div> 
+        
+          </>
+      )
+    }
+
+
+
+
+
+
+
+    let root =document.getElementById("root")
+
+    let rootEle= ReactDOM.createRoot(root)
+rootEle.render(<App/> )
+  </script>
+</html>

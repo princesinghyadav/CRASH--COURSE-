@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+let root =document.getElementById("root")
+
+let  rootele=ReactDOM.createRoot(root)
+
+  function Todolist(){
+const [todo, todolist]=React.useState([])
+const [newtodo,setodo]=React.useState("")
+ 
+
+function work (event){
+    setodo(event.target.value)
+    console.log(newtodo)
+}
+
+function addtodo(){
+    todolist([ ...todo, { id:Date.now(), text:newtodo, completed: false }])
+    
+}
+function delet(i){
+ todolist(todo.filter( (ele=> ele.id !==i)
+    
+ ))
+}
+function com (id){
+    
+ todolist(todo.map(todo=>
+    todo.id === id ?{...todo,completed: !todo.completed}:todo
+ ))
+ 
+}
+return (
+    <div>
+        <input type="text" placeholder="enter the work "
+         value={newtodo}
+         onChange={work}/>
+         <button onClick={addtodo}> Add Todos</button>
+
+         <ol > 
+            {todo.map((ele,i)=>(
+                <li key={ele.id}> 
+           
+           <input type="checkbox" checked={ele.completed} 
+           onChange={() => com(ele.id)}/>
+         <span>{ ele.text} </span> 
+           <button onClick={()=>delet(ele.id)}> Delete </button> 
+           </li>
+                ))}
+        
+         </ol>
+
+        </div>
+)
+
+
+  }
+
+
+
+
+
+
+
+
+rootele.render(<Todolist/>)
+
+
+  </script>
+</html>

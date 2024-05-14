@@ -18,14 +18,17 @@
     let items = ["Apple","Banana", "Cherry","Melon","Orange"]
     
 
-    function ItemList(arr){
+    function ItemList( {itemss}){
        return  <ul>
-        {items.length>0?(items.map(ele=>{
+        {itemss.length>0?(itemss.map(ele=>{
             return <li>{ele}</li>
         })):"No items found"}
         </ul>
     }
-  ReactDOM.createRoot(root).render(<ItemList/>)
+
+
+
+  ReactDOM.createRoot(root).render(<ItemList itemss={items}/>)
 
   </script>
 </body>
