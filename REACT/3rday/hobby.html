@@ -15,59 +15,110 @@
     // Your  code will go here
 
 
-    function App (){
-const [arrr,addd]= React.useState([])
-const [blank,create]= React.useState("")
-const[statem,statement]=React.useState(false)
+//     function App (){
+// const [arrr,addd]= React.useState([])
+// const [blank,create]= React.useState("")
+ 
 
-let inp= <input placeholder="Enter the hobby" 
-      value={blank}  />
+// let inp= <input placeholder="Enter the hobby" 
+//       value={blank}  />
 
  
-function Add(){
-   statement( !statem) 
-    console.log(statem)
-}
-function Remove (){
+// function Add(){
+//    statement( !statem) 
+//     console.log(statem)
+// }
+// function Remove (){
 
-}
-function  colorcom(event){
-  create(event.target.value)
-  console.log(blank)
+// }
+// function  colorcom(event){
+//   create(event.target.value)
+//   console.log(blank)
  
-}
-function submit(){
-   console.log(arrr)  
-}
-function adddd(){
-  addd([...arrr, {id:Date.now(), hobby:blank}])
+// }
+// function submit(){
+//    console.log(arrr)  
+// }
+// function adddd(){
+//   addd([...arrr, {id:Date.now(), hobby:blank}])
   
-}
+// }
 
-      return (
-<>
-      <input placeholder="Enter the hobby" 
-      value={blank} 
-      onChange={colorcom}
+//       return (
+// <>
+//       <input placeholder="Enter the hobby" 
+//       value={blank} 
+//       onChange={colorcom}
 
-      />
-      <button onClick={adddd}>add   </button>
- <div  >
+//       />
+//       <button onClick={adddd}>add   </button>
+//  <div  >
  
-<br/>
-<button onClick={Add}> Add more hobby</button>
- {statem?( <input placeholder="enter more hobby" />): null}
+// <br/>
+// <button onClick={Add}> Add more hobby</button>
+//  {statem?( <input placeholder="enter more hobby" />): null}
 
-          </div> 
-      <button onClick={submit}>submit</button>
-          </>
-      )
-    }
+//           </div> 
+//       <button onClick={submit}>submit</button>
+//           </>
+//       )
+//     }
 
+
+
+
+const HobbyForm = () => {
+  const [hobbies, setHobbies] = React.useState(['']);
+
+  const handleInputChange = (index, event) => {
+    const newHobbies = [...hobbies];
+    newHobbies[index] = event.target.value;
+    setHobbies(newHobbies);
+  };
+
+  const addHobby = () => {
+    setHobbies([...hobbies, '']);
+  };
+
+  const removeHobby = index => {
+    const newHobbies = [...hobbies];
+    newHobbies.splice(index, 1);
+    setHobbies(newHobbies);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    console.log(hobbies);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {hobbies.map((hobby, index) => (
+        <div key={index}>
+          <input
+            type="text"
+            placeholder="Enter hobby"
+            value={hobby}
+            onChange={e => handleInputChange(index, e)}
+          />
+          {index !== 0 && (
+            <button type="button" onClick={() => removeHobby(index)}>
+              Remove
+            </button>
+          )}
+        </div>
+      ))}
+      <button type="button" onClick={addHobby}>
+        Add Hobby
+      </button>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
     let root =document.getElementById("root")
 
     let rootEle= ReactDOM.createRoot(root)
-rootEle.render(<App/> )
+rootEle.render(<HobbyForm/> )
 
 
   </script>

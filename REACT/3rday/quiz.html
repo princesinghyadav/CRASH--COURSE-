@@ -15,6 +15,90 @@
     // Your  code will go here
 
 
-    
+    const Quiz = () => {
+  const questions = [
+    {
+      question: 'What is the capital of France?',
+      options: ['Paris', 'London', 'Berlin', 'Rome'],
+      correctAnswer: 'Paris'
+    },
+    {
+      question: 'Who wrote "To Kill a Mockingbird"?',
+      options: ['Harper Lee', 'J.K. Rowling', 'Ernest Hemingway', 'Stephen King'],
+      correctAnswer: 'Harper Lee'
+    },
+    {
+      question: 'What is the chemical symbol for water?',
+      options: ['H2O', 'CO2', 'NaCl', 'O2'],
+      correctAnswer: 'H2O'
+    }
+  ];
+
+  const [selectedAnswers, setSelectedAnswers] = React.useState(new Array(questions.length).fill(''));
+  const [showScore, setShowScore] = React.useState(false);
+  const [score, setScore] = React.useState(0);
+
+  const handleAnswerSelect = (index, answer) => {
+    const newSelectedAnswers = [...selectedAnswers];
+    newSelectedAnswers[index] = answer;
+    setSelectedAnswers(newSelectedAnswers);
+  };
+
+  const calculateScore = () => {
+    let newScore = 0;
+    for (let i = 0; i < questions.length; i++) {
+      if (selectedAnswers[i] === questions[i].correctAnswer) {
+        newScore++;
+      }
+    }
+    setScore(newScore);
+    setShowScore(true);
+  };
+
+  const restartQuiz = () => {
+    setSelectedAnswers(new Array(questions.length).fill(''));
+    setShowScore(false);
+    setScore(0);
+  };
+
+  return (
+    <div>
+      {!showScore ? (
+        <div>
+          {questions.map((question, index) => (
+            <div key={index}>
+              <h3>{question.question}</h3>
+              <ul>
+                {question.options.map((option, optionIndex) => (
+                  <li key={optionIndex}>
+                    <label>
+                      <input
+                        type="radio"
+                        value={option}
+                        checked={selectedAnswers[index] === option}
+                        onChange={() => handleAnswerSelect(index, option)}
+                      />
+                      {option}
+                    </label>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          <button onClick={calculateScore}>Submit</button>
+        </div>
+      ) : (
+        <div>
+          <h2>Your Score: {score}/{questions.length}</h2>
+          <button onClick={restartQuiz}>Restart Quiz</button>
+        </div>
+      )}
+    </div>
+  );
+};
+let root =document.getElementById("root")
+
+let rootEle= ReactDOM.createRoot(root)
+rootEle.render(<Quiz/> )
   </script>
 </html>
