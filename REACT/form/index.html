@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+
+  function Child1( {fun}){
+
+let namee = "prince sibngh yadav"
+
+ fun(namee)
+  
+  }
+
+   function App(){
+
+     const[name,setname]=React.useState("")
+     const[age,setage]=React.useState()
+     const[check,setcheck]=React.useState(false)
+     const[country,setcountry]=React.useState("")
+function nam(namee){
+
+   console.log("this is my name ",namee)
+}
+
+     function namechange(e){
+        setname(e.target.value)
+     }
+     function agechange(e){
+        setage(Number(e.target.value))
+     }
+     function checkchange(e){
+        setcheck(!check)
+     }
+     function selectchange(e){
+        setcountry(e.target.value)
+     }
+
+     function finalsubmit(e){
+        e.preventDefault()
+
+      const data={
+        name,
+        age,
+        check,
+        country,
+      }
+      const newdata=[...data,]
+      console.log("htos ois final dat",data)
+
+
+     }
+     return(
+      <>
+        <form onSubmit={finalsubmit}>
+
+            <label>
+Name : <input type="text" value={name} onChange={namechange} />
+                </label>
+                <label>
+age : <input type="number" value={age} onChange={agechange} />
+                </label>
+                <label>
+ismarried : <input type="checkbox" value={check} onChange={checkchange} />
+                </label>
+               <select onChange={selectchange}  value={country}> 
+<option value="">select country</option>
+<option value="India">India </option>
+<option value="china">china </option>
+<option value="vietnam">vietnam </option>
+<option value="bhutan">bhutan</option>
+                </select>
+            <input  type="submit" value="submit final"/> 
+                </form>
+                <p> NA,me:{ name}</p>
+                <p>age{age}</p>
+                <p>maried  {check.toString()}</p>
+                <p> country:{country}</p>
+                
+                <Child1  fun={nam}    />
+                </>
+     )
+
+   }
+
+   function List(){
+      const list=[ "applw","banana", "orange",4,5,6];
+const list2 =[
+    { id: 1, description: "Item 1" ,fru:"appl"},
+    { id: 2, description: "Item 2" ,fru:"appl"},
+    { id: 3, description: "Item 3",fru:"appl" },
+    { id: 4, description: "Item 4",fru:"appl" },
+  ]  ;
+
+      return(
+<>
+         <p> list of fruits </p>
+         <ol  > 
+            {list2.map((ele)=>{   
+   return   <li key={ele.id}> {ele.description} </li>
+              
+      })}
+   
+      
+   </ol>
+</>
+      )
+
+   }
+
+
+
+
+
+   function UlList(){
+      const list=[ "applw","banana", "orange",4,5,6];
+const list2 =[
+    { id: 1, description: "Item 1" ,fru:"appl"},
+    { id: 2, description: "Item 2" ,fru:"appl"},
+    { id: 3, description: "Item 3",fru:"appl" },
+    { id: 4, description: "Item 4",fru:"appl" },
+  ]  ;
+
+      return(
+<div>
+         <p> list of fruits </p>
+         {
+            list2.map((ele)=>{
+            return    <div>
+               <ul > 
+         
+         <li key={ele.id}>{ele.description} </li>
+        
+                 
+                  
+                  </ul>
+                  </div>
+            })
+         }
+         
+</div>
+      )
+
+   }
+let root =document.getElementById("root")
+
+let rootEle= ReactDOM.createRoot(root)
+rootEle.render(<UlList/> )
+</script>
+</html>
+ 
