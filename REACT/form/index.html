@@ -11,6 +11,7 @@
   <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
   <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script type="text/babel">
 
   function Child1( {fun}){
@@ -59,6 +60,7 @@ function nam(namee){
 
 
      }
+   //   to show how forms work
      return(
       <>
         <form onSubmit={finalsubmit}>
@@ -92,6 +94,24 @@ ismarried : <input type="checkbox" value={check} onChange={checkchange} />
 
    }
 
+
+
+
+// this card and list function for create and show on ui through like card
+   function Card(props){
+
+   console.log(props)
+   const {users}=props
+      const {id,description,fru}=users
+   return (
+      <div>
+        <p>id:-{id} </p>
+        <h1>description :-{description} </h1>
+        <h1>fruits :-{fru} </h1>
+
+        </div>
+   )
+}
    function List(){
       const list=[ "applw","banana", "orange",4,5,6];
 const list2 =[
@@ -102,25 +122,36 @@ const list2 =[
   ]  ;
 
       return(
-<>
-         <p> list of fruits </p>
-         <ol  > 
-            {list2.map((ele)=>{   
-   return   <li key={ele.id}> {ele.description} </li>
+// <>
+//          <p> list of fruits </p>
+//          <ol  > 
+//             {list2.map((ele)=>{   
+//    return   <li key={ele.id}> {ele.description} </li>
               
-      })}
+//       })}
    
       
-   </ol>
+//    </ol>
+// </>
+<>
+
+<p> render it like a card</p>
+{
+   list2.map((user)=>{
+      // console.log(Card);
+     return  <Card users={user}/>
+   })
+}
 </>
-      )
+ 
+)
 
    }
 
 
 
 
-
+  
    function UlList(){
       const list=[ "applw","banana", "orange",4,5,6];
 const list2 =[
@@ -151,10 +182,14 @@ const list2 =[
       )
 
    }
-let root =document.getElementById("root")
+
+    
+
+
+   let root =document.getElementById("root")
 
 let rootEle= ReactDOM.createRoot(root)
-rootEle.render(<UlList/> )
+rootEle.render(< List/> )
 </script>
 </html>
  

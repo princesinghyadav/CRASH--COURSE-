@@ -34,11 +34,13 @@ who seeks after it and wants to have it, simply because it is pain..." if it is 
 )
 }
 function  Message2(){
-
+const [heme,setheme]=React.useState("light")
 return (
+<>
+    <Message theme={heme}/>
+<button onClick={()=>setheme("dark")}> change theme</button>
 
-    <Message theme="dark"/>
-
+</>
 )
 
 }
