@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Navbar } from './component/navbar' 
-
-
+ 
+ 
 
  
 import './App.css'
@@ -13,7 +13,7 @@ function App() {
     <>
     
        <Navbar/> 
-      
+     
     </>
   )
 }

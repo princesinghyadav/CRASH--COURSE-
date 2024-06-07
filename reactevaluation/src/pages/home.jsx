@@ -1,5 +1,6 @@
 import { useState,useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Home(){
 const [home , setHome]=useState([])
@@ -13,7 +14,7 @@ const [home , setHome]=useState([])
  
     }
     useEffect( function (){
-    //  Data()
+     Data()
 
     },[])
 
@@ -23,26 +24,20 @@ const [home , setHome]=useState([])
 {
     home.map((ele,i)=>{
       return (
-        <div key={ele.id} style={{display:"grid" , gridTemplateColumns:"repeat(3,1fr)",
-
-
-       }}>
-<div style={{display:"grid" ,
-gridTemplateColomn:"repeat(3,1fr)",
-border:"1px solid black"
-}}>
+        <div key={ele.id} id='home-card' >
+<div  id='homecard'>
             <h3> Title :- {ele.title}</h3> 
             <h3> Brand:- {ele.brand}</h3> 
             <h3>  Category :- {ele.category}</h3> 
             <h3>Price:-  {ele.price}</h3> 
  </div>
-             
+             <Link to={`/user/${ele.id}`}>get all details in one page </Link>
             </div>
     
       )
     })
 }
-<button onClick={Data}> info</button>
+{/* <button onClick={Data}> info</button> */}
 </>
     )
 }
