@@ -1,3 +1,5 @@
+
+
 function identifyPrime(num) {
     // Write code here
     let count=0;
@@ -7,11 +9,11 @@ function identifyPrime(num) {
     }  
     }
     if(count==1){
-       console.log( "Yes , it is prime number") 
+       console.log(num, "Yes , it is prime number") 
     }else{
-        console.log( "No, it is not a prime no.")
+        console.log( num, "No, it is not a prime no.")
     }
  
     
 }
-identifyPrime(11)
+identifyPrime(19)

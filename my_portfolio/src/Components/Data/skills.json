@@ -1,0 +1,38 @@
+[
+    { 
+      "id": 1,
+      "title": "HTML",
+      "imageSrc": "../../../assets/image/html.png"
+    },
+    {
+      "id": 2,
+      "title": "CSS",
+      "imageSrc": "../../../assets/image/css.png"
+    },
+    {
+      "id": 3,
+      "title": "JavaScript",
+      "imageSrc": "../../../assets/image/javascript.png"
+    },
+    {
+      "id": 4,
+      "title": "React",
+      "imageSrc": "../../../assets/image/react.png"
+    },
+    {
+      "id": 5,
+      "title": "Python",
+      "imageSrc": "../../../assets/image/python.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Chakra UI",
+      "imageSrc": "../../../assets/image/chakra.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Tailwind",
+      "imageSrc": "../../../assets/image/tailwind.jpg"
+    }
+   
+  ]

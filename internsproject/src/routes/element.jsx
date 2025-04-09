@@ -10,8 +10,8 @@ export function Element(){
         <>
         <Routes>
 
-            <Route path="/feedback" element={<Feedback/>}/>
             <Route path="/" element={<Welcome/>} />
+            <Route path="/feedback" element={<Feedback/>}/>
             <Route path="/feedback/welcome" element={ <WelcomePage/> } />
         </Routes>
         </>

@@ -1,8 +1,8 @@
  
 
     let obj={
-        Length: 5,
-        Width: 6,
+        Length: 18,
+        Width: 16,
         Area:  function(){
           let area= this.Length*this.Width
       return area;

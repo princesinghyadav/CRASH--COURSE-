@@ -1,11 +1,15 @@
-let str ="RAMAN";
-let  nestrr=str;
-let nestr= nestrr.toLowerCase();
-function checkcsmallcase(str,nestr){
+let str ="prince";
+let  newstrr=str;
+let newstr= newstrr.toLowerCase();
+
+
+function checkcsmallcase(str,newstr){
  
-    if(str==nestr){
-        console.log("it is asmall case");
+    if(str==newstr){
+        console.log("it is a small case");
     }else{
-        console.log("it is not a lowercase string ");
+        console.log("it is not a upppercase  string ");
     }
-}checkcsmallcase(str,nestr)
+}
+
+checkcsmallcase(str,newstr)

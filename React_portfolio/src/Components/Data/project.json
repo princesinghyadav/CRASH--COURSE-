@@ -1,0 +1,10 @@
+[
+     {
+      "id": 1,
+      "title": "KFC CLONE",
+      "imageSrc": "../../../assets/image/kfc.png",
+      "description": "Completed within a tight 48-hour deadline, this project involved adding functionality to a provided UI for a KFC. Despite the time constraints, I successfully implemented the required features, showcasing my ability to deliver quality work under pressure.",
+      "demo": "https://kfc-clone-q4xluf8uk-princesinghyadavs-projects.vercel.app/",
+      "source": "https://github.com/princesinghyadav/KFC-clone"
+    } 
+  ]

@@ -17,6 +17,7 @@ function handleFormSubmit(e) {
   e.preventDefault();
   
   let values = e.target;
+  console.log(values)
   let name = values[0].value;
   let employeeId = values[1].value;
   let department = values[2].value;

@@ -25,20 +25,21 @@
   <input class="number" placeholder="ENTER SECOND NUMBER" id="SECOND" type="number">
 
   <br>
+
   <h1 id="result"> </h1>
   <button onclick="add()" id="button" class="button">Add </button>
    <button onclick="subtract()" class="button">Subtract  </button>
   <button onclick="multiply()" class="button">Multiply  </button>
   <button onclick="divide()" class="button">Divide </button>
     <script>
+
 let valuu= document.getElementById("first")
- 
  let valuu2= document.getElementById("SECOND") 
  let result= document.getElementById("result")
  result.innerHTML="RESULT WILL BE SHOW HERE ";
     function add(){
      
-      let addd=  Number(valuu.value)+  Number(valuu2.value)
+      let addd=  Number(valuu.value) + Number(valuu2.value)
       result.innerHTML=addd;
     }
     function subtract(){
@@ -56,8 +57,9 @@ result.innerHTML=sub;
     }
     function  divide (){
         let div=valuu.value/valuu2.value;
-     
+        result.innerHTML="RESULT WILL BE SHOW HERE ";
       alert(div)
+     
     }
 
     </script>

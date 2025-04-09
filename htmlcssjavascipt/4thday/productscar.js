@@ -1,3 +1,6 @@
+
+
+
 function ProductsCart(names, quantities, prices) {
     this.data = [];
     
@@ -18,7 +21,10 @@ function ProductsCart(names, quantities, prices) {
         }
         return totalValue;
     }
+   this.print = function (){
+   console.log(this.data)
 }
+    }
 
  
 const names = ["Rice", "Dal", "Salt"];
@@ -26,4 +32,12 @@ const quantities = [2, 3, 1];
 const prices = [60, 50, 20];
 
 const cart = new ProductsCart(names, quantities, prices);
-console.log(cart.total());  
+// const cart2 = new ProductsCart(names, quantities, prices);
+
+console.log(cart.print());  
+console.log(cart.total());
+
+
+
+// console.log( ProductsCart(names, quantities, prices))
+ 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Rating } from '../component/rating';
 import { Button ,Stack,Box  } from '@chakra-ui/react'
  import { PromiseBasedToastExample } from '../component/toast';
-
+ 
 export function Feedback(){
 
   
@@ -38,9 +38,6 @@ export function Feedback(){
   
      const [qno,setqno]=useState(0);// to track the question no. 
       
-      
-         
-      
       const next=()=>{
         setqno(qno+1);
         if(qno==lengths-1){
@@ -53,6 +50,8 @@ export function Feedback(){
         setqno(qno-1);
        
       }
+         
+     
        
     return (
 <>
@@ -88,23 +87,23 @@ export function Feedback(){
         
       </Box>
     
-   <>
-   <Stack spacing={18} direction='row' align='center' justifyContent="space-evenly">
-   
-   <Button colorScheme='blue' size='lg' onClick={prev}>
-     Prev
-   </Button>
-   {qno == lengths-1 ? <PromiseBasedToastExample/>
-    
-   : <Button colorScheme='teal' size='lg' onClick={next} >
-     Next 
-   </Button>}
-   </Stack>
-   </>
+      <>
+        <Stack spacing={18} direction='row' align='center' justifyContent="space-evenly">
+        
+        <Button colorScheme='blue' size='lg' onClick={prev} >
+          Prev
+        </Button>
+        {qno == lengths-1 ? <PromiseBasedToastExample/>
+         
+        : <Button colorScheme='teal' size='lg' onClick={next} >
+          Next 
+        </Button>}
+        </Stack>
+        </>
    
 
     </Box>
-  
+   
 </>
       
    

@@ -1,0 +1,39 @@
+import { useState } from 'react'
+import './App.css'
+import Navbar from "./Components/Navbar";
+import Home from './Components/Home';
+import About from './Components/About'
+// import Skills from './Components/Skills'
+import Skills from './Components/skills';
+import Projects from './Components/Projects'
+import Contact from './Components/Contact'
+import Footer from './Components/Footer';
+// import Aos from 'aos'
+// import 'aos/dist/aos.css'
+import { useEffect } from 'react'
+
+
+function App() {
+  // useEffect(() => {
+  //   Aos.init();
+
+  // }, [])
+
+  return (
+    <>
+      {/* <Navbar /> */}
+      <div>
+        {/* <h6 className=''> hello  world! </h6> */}
+        {/* <Home />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Footer /> */}
+      </div>
+      
+    </>
+  )
+}
+
+export default App

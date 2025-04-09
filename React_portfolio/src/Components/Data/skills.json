@@ -1,0 +1,59 @@
+[
+    { 
+      "id": 1,
+      "title": "HTML",
+      "imageSrc": "../../../assets/image/html.png"
+    },
+    {
+      "id": 2,
+      "title": "CSS",
+      "imageSrc": "../../../assets/image/css.png"
+    },
+    {
+      "id": 3,
+      "title": "JavaScript",
+      "imageSrc": "../../../assets/image/javascript.png"
+    },
+    {
+      "id": 4,
+      "title": "React",
+      "imageSrc": "../../../assets/image/react.png"
+    },
+    {
+      "id": 5,
+      "title": "Axios",
+      "imageSrc": "https://th.bing.com/th/id/OIP.DfXj70PID4YvRZAjXCr4RgHaEK?w=276&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+    },
+    {
+      "id": 6,
+      "title": "React Router Dom",
+      "imageSrc": "https://th.bing.com/th/id/OIP.V5-IFdXoTrW3HHfP0x9XhAHaEf?pid=ImgDet&w=184&h=111&c=7&dpr=1.3)"
+    },
+    {
+      "id": 7,
+      "title": "Chakra UI",
+      "imageSrc": "../../../assets/image/chakra.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Tailwind CSS",
+      "imageSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStVklzfGsO-6hPFSuutVa0ingPtO5KZgg2vA-irnqZosRmpp4HHc12Ir-taFq3oO4ujPo&usqp=CAU"
+    },
+    {
+      "id": 9,
+      "title": "C",
+      "imageSrc": "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg"  
+    },
+    {
+      "id": 10,
+      "title": "C++",
+      "imageSrc": "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg"
+    },
+    {
+      "id": 11,
+      "title": "Python",
+      "imageSrc": "https://quantumzeitgeist.com/wp-content/uploads/pythoned.png"
+    }
+    
+   
+  ]

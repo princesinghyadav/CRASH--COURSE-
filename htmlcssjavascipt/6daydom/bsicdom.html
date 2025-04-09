@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    
+<div id="root">
+    
+</div>
+
+</body>
+<script>
+
+let root =document.getElementById("root");
+let div =document.createElement("div")
+let h2 = document.createElement("h2");
+h2.innerText=" hello developers !";
+
+h2.style.color="red";
+
+let h1 = document.createElement("h2");
+h1.innerText=" hello developers !";
+
+h1.style.color="red";
+
+let h4 = document.createElement("h2");
+h4.innerText=" hello  web developers !";
+
+h4.style.color="blue";
+
+
+div.append(h2,h1,h4);
+root.append(div);
+</script>
+</html>

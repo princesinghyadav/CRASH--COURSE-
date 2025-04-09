@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>search the meals to know the recpie</h2>
+    <input id="search" placeholder="search any meals" oninput="meals()">
+    <div id="container">
+     
+
+    </div>
+</body>
+<script>
+    let timer=null ;
+
+    function meals(){
+console.log("Here is some of your searches:-")
+  clearInterval(timer);
+timer=setTimeout(function(){
+    fetchh(document.getElementById("search").value);
+},1500)
+ 
+
+    }
+    function fetchh(query){
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
+        .then((res) => 
+            res.json())
+            .then(data =>{
+           console.log(data)
+           details(data.meals)
+        }).catch(err=>{
+            console.log(err)
+        })
+         
+    }
+     function details(receipe){
+        receipe.forEach(receipe => {
+            let div= document.querySelector("#container")
+            // div.innerHTML=""
+            let h2=document.createElement("h2");
+       h2.innerText=`Name of the meal :-${receipe.strMeal}`;
+       let h3=document.createElement("h2");
+       h3.innerText=`Id of the meal :-${receipe.idMeal}`;
+       let img=document.createElement("img")
+       img.src=receipe.strMealThumb 
+       
+      
+       div.append(h3,h2,img)
+        });
+      
+    }
+</script>
+</html>
+ 

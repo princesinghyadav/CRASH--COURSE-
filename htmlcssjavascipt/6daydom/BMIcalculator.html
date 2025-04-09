@@ -12,11 +12,10 @@
         <h2>put your height here (Metre)</h2>
         <input id="hei" type="number" placeholder="enter your height">
         <button onclick="bmi() ">calculate BMI</button>
-        <div style="display: flex;" >
-            <div><h1>Your BMI is </h1></div>
-            <div ><h1 id="bmii">  </h1> </div>
-            <div><h1>  which means you are </h1></div>
-            <div ><h1 id="res">  </h1> </div>
+
+        <div style="display: flex; margin: 3px;" >
+             <div style="  margin: 3px;"><h1 id="bmii">  </h1> </div>
+              <div style="  margin: 3px;"><h1 id="res">  </h1> </div>
         </div>
       
 
@@ -32,17 +31,17 @@ let re =document.getElementById("res")
         let bmii = we.value/(he.value**2)
         e.innerText=bmii  
         if(bmii<18.4){
-            e.innerText=bmii
-            re.innerText=  " underweight"
+            e.innerText="Your BMI is "+ bmii;
+            re.innerText=  "  which means you are under weight"
         }if(bmii>18.5 && bmii<24.9){
-            e.innerText=bmii
-            re.innerText= "normol weight"
+            e.innerText="Your BMI is "+bmii;
+            re.innerText= "  which means you are normol weight"
         }if (bmii>25 && bmii<29.9 ){
-            e.innerText=bmii 
-            re.innerText= "overwight"
+            e.innerText="Your BMI is "+bmii ;
+            re.innerText= "  which means you are over wight"
         }if (bmii>30){
-            e.innerText=bmii 
-            re.innerText= "obese"
+            e.innerText="Your BMI is "+bmii ;
+            re.innerText= "  which means you are obese"
         }
 
          

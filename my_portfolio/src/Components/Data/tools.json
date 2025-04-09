@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "title": "Vscode",
+      "imageSrc": "../../../assets/image/vscode.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Github",
+      "imageSrc": "../../../assets/image/github.png"
+    },
+    {
+      "id": 3,
+      "title": "Replit",
+      "imageSrc": "../../../assets/image/replit.png"
+    },
+    {
+      "id": 4,
+      "title": "Vercel",
+      "imageSrc": "../../../assets/image/vercel.png"
+    }
+   
+  ]

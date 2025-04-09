@@ -56,7 +56,7 @@ function nam(namee){
         country,
       }
       const newdata=[...data,]
-      console.log("htos ois final dat",data)
+      console.log("htos ois final dat",newdata)
 
 
      }
@@ -83,7 +83,7 @@ ismarried : <input type="checkbox" value={check} onChange={checkchange} />
                 </select>
             <input  type="submit" value="submit final"/> 
                 </form>
-                <p> NA,me:{ name}</p>
+                <p> Name:{ name}</p>
                 <p>age{age}</p>
                 <p>maried  {check.toString()}</p>
                 <p> country:{country}</p>
@@ -167,13 +167,14 @@ const list2 =[
          {
             list2.map((ele)=>{
             return    <div>
-               <ul > 
+               <ol > 
          
-         <li key={ele.id}>{ele.description} </li>
-        
+         <li key={ele.id}>{ele.id} </li>
+         <li  >{ele.description} </li>
+         <li  >{ele.fru} </li>
                  
                   
-                  </ul>
+                  </ol>
                   </div>
             })
          }
@@ -189,7 +190,7 @@ const list2 =[
    let root =document.getElementById("root")
 
 let rootEle= ReactDOM.createRoot(root)
-rootEle.render(< List/> )
+rootEle.render(< App/> )
 </script>
 </html>
  
